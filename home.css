@@ -1,0 +1,212 @@
+
+:root{
+    --darker: #1F2937;
+    --darkest: #111827;
+    --grey: #7c818b;
+    --light: #EEE;
+    --pink: #EC4899;
+    --purple: #9875ea;
+    --back: rgb(207, 187, 229);
+    --delete: red;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+    font-family: 'Fira sans', 'sana-serif';
+}
+
+body{
+    background-color: var(--back);
+    background-image: url("background.jpg");
+    background-attachment: fixed;
+    background-size: cover;     
+    color: var(--darkest);
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+header{
+    width: 100%;
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-right: 0;
+}
+
+header h1{
+    font-size: 4rem;
+    font-family: Cursive;
+    font-weight: bold;
+    color: var(--darkest);
+    margin-bottom: 1rem;
+}
+
+#add_new_task{
+    display: flex;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+input, button{
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+#new_input{
+    flex: 1 1 0%;
+    background-color: var(--darker);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    color: var(--light);
+    font-size: 1.4rem;
+}
+
+#new_input::placeholder{
+    color: var(--purple);    
+}
+
+#submit_task_div{
+    display: flex;
+    background-color: var(--darkest);
+    border-radius: 1rem;
+    justify-content: center;
+    max-width: 130px;
+}
+
+#submit_task_input{
+    color: var(--pink);
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding: 1rem;
+    background-image: linear-gradient(to right, var(--purple), var(--pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#submit_task_input:hover{
+    opacity: 0.8;
+}
+
+#submit_task_input:active{
+    opacity: 0.65;
+}
+
+main{
+    flex: 1 1 0%;
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    margin-right: 0;
+}
+
+.task_container{
+    padding: 1rem;   
+    background-color: var(--darker);
+    border-radius: 1.2rem;
+}
+
+.task_container h2{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--grey);
+    margin-bottom: 1rem;
+}
+
+
+#tasks .task{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--darkest);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 1rem 0.5rem;
+}
+
+#tasks .task .input_div{
+    flex: 1 1 0%;
+}
+#tasks .task .input_div .text{
+    color: var(--light);
+    font-size: 1.2rem;
+    width: 100%;
+    display: block;
+    transition: 0.4;
+}
+#tasks .task .input_div .text:not(:read-only){
+    color: var(--pink);
+}
+
+#tasks .task .action{
+    display: flex;
+    margin: 0 0.4rem;
+}
+
+.task .action button{
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    width: 100%;
+    display: block;
+    transition: 0.4;
+}
+
+.task .action button:hover{
+    opacity: 0.8;
+}
+
+.task .action button:active{
+    opacity: 0.65;
+}
+
+.task .action .edit{
+    background-image: linear-gradient(to right, var(--pink), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.task .action .delete{
+    color: var(--delete); 
+}
+
+@media screen and (max-width: 471px){
+    #add_new_task{
+        display: block;
+    }
+
+    #submit_task_div{
+        margin-top: 1rem;
+    }   
+}
+@media screen and (max-width: 361px){
+    header h1{
+        font-size: 2.8rem;
+    }
+}
+@media screen and (max-width: 241px){
+
+    header h1{
+        font-size: 2.3rem;
+    }
+    
+    .task_container h2{
+        font-size: 1.8rem;
+    }
+    #tasks .task{
+        display: block;
+        overflow: hidden;
+    }
+    #tasks .task .action{
+        display: flex;
+        margin: 1rem 0.4rem 0rem;
+    }
+}
